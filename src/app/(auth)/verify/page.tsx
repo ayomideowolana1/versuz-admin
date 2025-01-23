@@ -1,7 +1,7 @@
-import { GalleryVerticalEnd } from "lucide-react"
+import { GalleryVerticalEnd } from "lucide-react";
 
-import { LoginForm } from "@/components/login-form"
-import Logo from "@/components/logo"
+import { Verify } from "@/components/verify";
+import Logo from "@/components/logo";
 
 export default function LoginPage() {
   return (
@@ -13,8 +13,8 @@ export default function LoginPage() {
           </div>
           Versuz Co.
         </a>
-        <LoginForm />
+        <Verify />
       </div>
     </div>
-  )
+  );
 }

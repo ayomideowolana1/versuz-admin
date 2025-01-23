@@ -1,17 +1,21 @@
-import React from "react";
-import { json } from "stream/consumers";
+import { options } from "@/app/api/auth/[...nextauth]/options"
+import { getServerSession } from "next-auth"
+import Link from "next/link"
+import { redirect } from "next/navigation"
+
 
 export default async function Overview() {
-  // const res = await fetch("/api/login", {
-  //   method: "GET",
-  // });
+const session = await getServerSession(options)
 
-  // const data = await res.json();
-  // console.log(data);
+if(!session){
+  redirect('/api/auth/login?callbackUrl=/overview')
+}
 
+console.log(session)
   return (
     <div>
       <ul></ul>
+      <Link href="/api/auth/signout">Logout</Link>
     </div>
   );
 }
